@@ -1,4 +1,5 @@
 // src/components/Navbar.jsx
+import React from 'react'; // ✅ Required for JSX
 import { NavLink } from 'react-router-dom';
 import '../styles/navbar.css';
 
@@ -24,7 +25,7 @@ function Navbar() {
         {/* Right: External link */}
         <div className="nav-right">
           <a
-            href="https://afridata-commons-1.onrender.com/" // Replace with your actual URL
+            href="https://afridata-commons-1.onrender.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="nav-external-link"
