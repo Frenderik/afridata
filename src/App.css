@@ -1,33 +1,70 @@
+/* Base app styling */
 .App {
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8; /* Light background for contrast */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
+/* Logo animation and styling */
 .App-logo {
-  height: 40vmin;
+  height: 120px;
+  margin-bottom: 2rem;
   pointer-events: none;
+  transition: transform 0.3s ease-in-out;
 }
 
+.App-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Motion preference media query */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Header styling */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #1e1e2f;
+  border-radius: 16px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
 }
 
+.App-header h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.App-header p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Link styling */
 .App-link {
   color: #61dafb;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
 
+.App-link:hover {
+  color: #21a1f1;
+}
+
+/* Animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +72,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* --- NEW CODE ADDED BELOW THIS LINE --- */
+
+/* Styling for the text-based "Afridata" logo */
+.afridata-logo {
+  /* This makes the element a block for transform to work correctly */
+  display: inline-block;
+
+  /* This defines the duration and easing of the animation */
+  transition: transform 0.3s ease-in-out;
+}
+
+.afridata-logo:hover {
+  /* This is the hover effect that moves the logo up by 3 pixels */
+  transform: translateY(-3px);
 }

@@ -1,0 +1,257 @@
+/* src/styles/features.css */
+
+.features-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Consistent side padding */
+  font-family: 'Inter', sans-serif;
+  color: #374151;
+}
+
+/* Reusable container for sections */
+.features-grid-container {
+  max-width: 960px; /* Slightly wider content area for features */
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+/* Reusable section titles and descriptions (consistent with other pages) */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section-description {
+  font-size: 1.15rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Features Hero Section */
+.features-hero-section {
+  background-color: #e0f2fe; /* Light blue background for hero */
+  padding: 6rem 1.5rem;
+  text-align: center;
+  border-radius: 16px;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.features-hero-title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #1c3d75;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.features-hero-subtitle {
+  font-size: 1.3rem;
+  color: #374151;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Main Features Grid Section */
+.features-grid-section {
+  background-color: #ffffff;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 columns on desktop */
+  gap: 2.5rem; /* Space between cards */
+}
+
+.feature-card {
+  background-color: #f8fafc; /* Light background for cards */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Card shadow */
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden; /* Hide anything outside card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px); /* Lift effect on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+}
+
+.feature-icon {
+  font-size: 4.5rem; /* Large icon size */
+  color: #1d4ed8; /* Blue color for icons */
+  margin-bottom: 1.5rem;
+  display: block; /* Ensures proper centering */
+  width: 100%;
+}
+
+.feature-card-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1e3a8a; /* Dark blue for titles */
+  margin-bottom: 0.8rem;
+}
+
+.feature-card-description {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Problems We Solve & Our Solutions Section */
+.solutions-section {
+  background-color: #e0f2fe; /* Light blue, distinct from main features */
+  margin-top: 4rem;
+  border-radius: 16px;
+  margin-bottom: 4rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 2 columns on desktop */
+  gap: 2.5rem;
+}
+
+.solution-card {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* For icon and text layout */
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text within card */
+}
+
+.solution-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.solution-icon {
+  font-size: 4rem; /* Icon size for solutions */
+  color: #0b5fa8; /* A slightly different shade of blue for contrast */
+  margin-bottom: 1.5rem;
+}
+
+.solution-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 0.8rem;
+}
+
+.solution-description {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+
+/* Responsive Adjustments for Features Page */
+@media (max-width: 1024px) {
+  .features-hero-title {
+      font-size: 3rem;
+  }
+  .features-hero-subtitle {
+      font-size: 1.2rem;
+  }
+  .section-title {
+      font-size: 2.2rem;
+  }
+  .features-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns for features */
+      gap: 2rem;
+  }
+  .solutions-grid {
+      grid-template-columns: 1fr; /* Stack solutions on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .features-hero-section {
+      padding: 4rem 1rem;
+  }
+  .features-hero-title {
+      font-size: 2.5rem;
+  }
+  .features-hero-subtitle {
+      font-size: 1.1rem;
+  }
+  .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+  }
+  .section-description {
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+  }
+  .feature-card, .solution-card {
+      padding: 2rem;
+  }
+  .feature-icon {
+      font-size: 3.5rem;
+  }
+  .feature-card-title {
+      font-size: 1.5rem;
+  }
+  .solution-icon {
+      font-size: 3rem;
+  }
+  .solution-title {
+      font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-page {
+      padding: 0 0.75rem;
+  }
+  .features-hero-section {
+      padding: 3rem 0.75rem;
+  }
+  .features-hero-title {
+      font-size: 2rem;
+  }
+  .features-grid-container {
+      padding: 3rem 0;
+  }
+  .section-title {
+      font-size: 1.6rem;
+  }
+  .features-grid, .solutions-grid {
+      grid-template-columns: 1fr; /* Single column on small screens */
+      gap: 1.5rem;
+  }
+  .feature-card, .solution-card {
+      padding: 1.5rem;
+  }
+  .feature-icon {
+      font-size: 3rem;
+  }
+  .feature-card-title {
+      font-size: 1.3rem;
+  }
+  .solution-icon {
+      font-size: 2.5rem;
+  }
+  .solution-title {
+      font-size: 1.4rem;
+  }
+}
