@@ -26,6 +26,8 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 
-# 9. Expose port and start app
-EXPOSE 3000
-CMD ["npm", "start"]
+# 9. Expose port 80
+EXPOSE 80
+
+# 10. Start the app on port 80
+CMD ["npx", "next", "start", "-p", "80"]
