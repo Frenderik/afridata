@@ -1,21 +1,31 @@
+# 1. Use Node.js image
 FROM node:20-alpine AS builder
 
+# 2. Set working directory
 WORKDIR /app
+
+# 3. Copy package.json and install dependencies
 COPY package.json package-lock.json ./
 RUN npm install
+
+# 4. Copy the rest of the project files
 COPY . .
+
+# 5. Build the app
 RUN npm run build
 
-FROM nginx:alpine
+# 6. Production image
+FROM node:20-alpine AS runner
 
-# Remove default nginx config
-RUN rm /etc/nginx/conf.d/default.conf
+# 7. Set working directory
+WORKDIR /app
 
-# Copy custom nginx config
-COPY nginx.conf /etc/nginx/conf.d
+# 8. Copy only necessary files
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
 
-# Copy build output
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# 9. Expose port and start app
+EXPOSE 3000
+CMD ["npm", "start"]
