@@ -96,7 +96,7 @@ export default function Navbar() {
             onClick={toggleMenu}
             className="inline-flex items-center justify-center p-3 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500 transition-all duration-300"
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">Open main menu.</span>
             {/* Hamburger icon */}
             <svg
               className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
